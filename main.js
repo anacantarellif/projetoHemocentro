@@ -1,14 +1,6 @@
 const doadores=[];
 let resposta;
 
-// AnaCantarelli
-// 16
-// 55
-// A+
-// 22/02/2020
-
-
-
 while (resposta !== 5) {
     resposta = Number(prompt(`
     == SISTEMA DE CADASTRO DE DOADORES DE SANGUE ==
@@ -35,10 +27,10 @@ Escolha uma opção:`))
             BuscarDoadorUltimaDoacao();
             break;
         case 5:
-            alert("Obrigada por acessar o sistema!")
+            alert("Agradecemos por acessar o sistema! Volte sempre!")
             break
         default:
-            alert("opção inválida")
+            alert("Opção inválida. Tente novamente!")
             break
     }
 }
@@ -46,21 +38,22 @@ Escolha uma opção:`))
 
 function cadastrarDoador() {
     const nome = prompt("Qual o seu nome?");
-    const idade = prompt("Qual a sua idade?");
-    const peso = prompt("Qual o seu peso?");
+    const idade = Number(prompt("Qual a sua idade?"));
+    const peso = Number(prompt("Qual o seu peso?"));
     const tipoSanguineo = prompt("Qual o seu tipo sanguíneo?").toLowerCase();
     const dataUltimaDoacao = prompt("Qual a data da sua última doação? DD/MM/AAAA");
 
     const doador = {
-        nome,
-        idade,
-        peso,
-        tipoSanguineo,
-        dataUltimaDoacao,
+        nome:nome,
+        idade:idade,
+        peso:peso,
+        tipoSanguineo:tipoSanguineo,
+        dataUltimaDoacao:dataUltimaDoacao,
 
     };
 
     doadores.push(doador)
+    alert(`A pessoa doadora ${nome} foi cadastrada com sucesso!`)
 }
 
 function listarDoadores() {
